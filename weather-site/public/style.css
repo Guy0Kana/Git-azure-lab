@@ -1,0 +1,209 @@
+/* Import Google font "Outfit" */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* Reset margins, paddings, and apply box sizing and font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+/* Body styling: full height, background and text color, flex layout */
+body {
+  height: 100vh;
+  color: #ECDFCC;
+  background: #181C14;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main container: horizontal flex layout, fills viewport height */
+.container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+/* Left panel for input and current weather info */
+.weather-input {
+  width: 25%;
+  padding: 2rem 1.5rem;
+  background: #181C14;
+  border-right: 1px solid #2f2f2f;
+}
+
+/* Grouping input and search icon */
+.input-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* Input field styling */
+.input-group input {
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  font-size: 1rem;
+  background: #2a2f23;
+  color: #fff;
+  outline: none;
+}
+
+/* Placeholder text color */
+.input-group input::placeholder {
+  color: #ccc;
+}
+
+/* Converter button style (currently unused in HTML) */
+.input-group #converter {
+  position: absolute;
+  right: 45px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Search icon positioning */
+.input-group .fa-search {
+  position: absolute;
+  right: 15px;
+  color: #ECDFCC;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+/* General spacing and text alignment for weather info */
+.weatherIcon,
+.temperature,
+.feelslike,
+.description,
+.date,
+.city {
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/* City name style */
+.city {
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* Optional positioning commented out */
+  /* z-index: 999;
+  bottom: 0;
+  position: fixed;
+  text-align: center; */
+}
+
+/* Smaller text elements styling */
+.temperature,
+.feelslike,
+.description,
+.date {
+  font-size: 18px;
+}
+
+/* Temperature emphasized style */
+.temperature {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Right panel for weather output and forecast */
+.weather-output {
+  width: 75%;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* Section headings */
+.heading {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Highlight metrics layout: responsive grid */
+.highlight {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Individual highlight metric card */
+.highlight div {
+  background: #2a2f23;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s ease;
+  border: 1px solid #333;
+}
+
+/* Hover effect for highlight cards */
+.highlight div:hover {
+  transform: scale(1.03);
+  border-color: #ECDFCC;
+}
+
+/* Highlight icons */
+.highlight i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #ECDFCC;
+}
+
+/* Highlight values */
+.highlight h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Forecast grid layout */
+.forecast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Individual forecast card */
+.forecast-card {
+  background: #2a2f23;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  color: #ECDFCC;
+  text-transform: capitalize;
+}
+
+/* Forecast icon size */
+.forecast-card img {
+  width: 60px;
+  height: 60px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .weather-input,
+  .weather-output {
+    width: 100%;
+  }
+
+  .weather-input {
+    border-right: none;
+    border-bottom: 1px solid #333;
+  }
+}

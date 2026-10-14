@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <!--For display on mobile screens-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!--Linking font awesome for icons-->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <!--Linking the external CSS file for styling-->
+  <link rel="stylesheet" href="style.css" />
+
+  <!--Linking the external Javascript file, loaded after HTML parsing-->
+  <script defer src="script.js"></script>
+
+  <!--Title of webpage-->
+  <title>Weather App</title>
+</head>
+<body>
+  <div class="container">
+
+    <!--Section for user input-->
+    <div class="weather-input">
+      <div class="input-group">
+
+        <!--Text box for user to enter city-->
+        <input type="text" id="userLocation" placeholder="Search City ..." />
+        <!--Search icon that triggers findUserLocation() function-->
+        <i class="fa fa-search" onclick="findUserLocation()"></i>
+      </div>
+
+      <!--Area to display current weather details-->
+      <div class="weatherIcon"></div>
+      <h2 class="temperature"></h2>
+      <div class="feelslike"></div>
+      <div class="description"></div>
+      
+      <div class="date"></div>
+      <div class="city"></div>
+    </div>
+
+    <!--Section for showing detailed weather output-->
+    <div class="weather-output">
+      <h2 class="heading">Today's Weather</h2>
+      <div class="highlight">
+
+        <!--Humidity info-->
+        <div class="humidity">
+          Humidity <i class="fa-solid fa-water"></i>
+          <h1 id="humidityValue"></h1>
+        </div>
+
+        <!--Wind speed info-->
+        <div class="wind-speed">
+          Wind Speed <i class="fa-solid fa-wind"></i>
+          <h1 id="windValue"></h1>
+        </div>
+        <div class="clouds">
+
+          <!--Cloud cover info-->
+          Clouds <i class="fa-solid fa-cloud"></i>
+          <h1 id="cloudsValue"></h1>
+        </div>
+
+        <!--UV index info-->
+        <div class="uv-index">
+          UV Index <i class="fa-solid fa-bacon"></i>
+          <h1 id="uvIndex"></h1>
+        </div>
+
+        <!--Atmospheric pressure info-->
+        <div class="pressure">
+          Pressure <i class="fa-solid fa-gauge"></i>
+          <h1 id="pressureValue"></h1>
+        </div>
+      </div>
+
+      <!--5-day forecast heading-->
+      <h2 class="heading">Next 5 days Forecast</h2>
+
+      <!--Container for forecast data, displayed as a grid-->
+      <div id="forecast" class="forecast-grid"></div>
+    </div>
+  </div>
+</body>
+</html>
