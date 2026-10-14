@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Team Weather Board</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #eef2f5;
+      color: #1f2933;
+    }
+    header {
+      background: #1d3557;
+      color: #fff;
+      padding: 24px 16px;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 6px; font-size: 26px; }
+    header p { margin: 0; font-size: 14px; opacity: 0.85; }
+    main {
+      max-width: 760px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    }
+    .card h2 { margin: 0 0 8px; font-size: 18px; }
+    .temp { font-size: 34px; font-weight: bold; margin: 4px 0; }
+    .note { color: #52606d; font-size: 14px; margin: 0; }
+    .status {
+      margin-top: 24px;
+      background: #fff;
+      border-left: 5px solid #2a9d8f;
+      border-radius: 4px;
+      padding: 14px 16px;
+      font-size: 14px;
+    }
+    footer {
+      text-align: center;
+      font-size: 13px;
+      color: #52606d;
+      padding: 24px 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Team Weather Board</h1>
+    <p>Sample data for testing the deploy workflow</p>
+  </header>
+
+  <main>
+    <div class="cards">
+      <div class="card">
+        <h2>Nairobi</h2>
+        <div class="temp">23&deg;C</div>
+        <p class="note">Partly cloudy</p>
+      </div>
+      <div class="card">
+        <h2>Nakuru</h2>
+        <div class="temp">19&deg;C</div>
+        <p class="note">Light rain</p>
+      </div>
+      <div class="card">
+        <h2>Mombasa</h2>
+        <div class="temp">31&deg;C</div>
+        <p class="note">Sunny and humid</p>
+      </div>
+    </div>
+
+    <div class="status">
+      <strong>Page version: 1</strong><br>
+      To test the workflow, change the number above to 2, commit to main,
+      and refresh this page after the Actions run turns green.
+      <br><br>
+      Your local time right now: <span id="clock">loading...</span>
+    </div>
+  </main>
+
+  <footer>
+    CNS3104 team project &middot; deployed from GitHub to the shared Azure VM
+  </footer>
+
+  <script>
+    function showTime() {
+      document.getElementById("clock").textContent = new Date().toLocaleString();
+    }
+    showTime();
+    setInterval(showTime, 1000);
+  </script>
+</body>
+</html>
