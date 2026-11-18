@@ -1,0 +1,19 @@
+# secrets and certificates, never commit these
+.env
+.env.*
+*.key
+*.pem
+*.crt
+*.csr
+private.key
+ca_bundle.crt
+certificate.crt
+
+# database files
+*.db
+*.sqlite
+*.sqlite3
+
+# system and dependency junk
+node_modules/
+.DS_Store
